@@ -5,54 +5,55 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Fire Boy and Water Girl</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
-    <style>
-        body, html {
-            height: 100%;
-            margin: 50px;
-            font-family: 'Nunito', sans-serif;
-            background-color: #f0f2f5;
-        }
-        .content-wrapper {
-            padding: 40px 0;
-        }
-        .game-header h1 {
-            color: #007bff;
-            margin-bottom: 0;
-        }
-        .game-header p {
-            color: #6c757d;
-        }
-        .section-heading {
-            color: #495057;
-            margin-bottom: 20px;
-            border-bottom: 2px solid #007bff;
-        }
-        .card {
-            box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-            transition: 0.3s;
-            border: none;
-        }
-        .card:hover {
-            box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-        }
-        .custom-link, a {
-            color: #007bff;
-        }
-        .custom-link:hover, a:hover {
-            text-decoration: underline;
-        }
-        img {
-            max-width: 60%;
-            height: auto;
-            border-radius: 5px;
-        }
-        .video-iframe {
-            width: 100%;
-            height: 500px; /* Fixed height for better control */
-            border-radius: 5px;
-            border: none;
-        }
-    </style>
+<style>
+    body, html {
+        height: 100%;
+        margin: 50px; 
+        font-family: 'Nunito', sans-serif;
+        background-color: #f0f2f5;
+    }
+    .content-wrapper {
+        padding: 40px 0;
+    }
+    .game-header h1 {
+        color: #007bff;
+        margin-bottom: 0;
+    }
+    .game-header p {
+        color: #6c757d;
+    }
+    .section-heading {
+        color: #495057;
+        margin-bottom: 20px;
+        border-bottom: 2px solid #007bff;
+    }
+    .card {
+        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
+        transition: 0.3s;
+        border: none;
+    }
+    .card:hover {
+        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
+    }
+    .custom-link, a {
+        color: #007bff;
+    }
+    .custom-link:hover, a:hover {
+        text-decoration: underline;
+    }
+    img {
+        max-width: 60%; 
+        height: auto;
+        border-radius: 5px;
+    }
+    iframe {
+        width: 100%; 
+        height: auto; 
+        aspect-ratio: 16 / 9;
+        border-radius: 5px;
+    }
+</style>
+
 </head>
 <body>
     <div class="container content-wrapper">
@@ -66,7 +67,7 @@
         <div class="row mb-4">
             <div class="col-12">
                 <h2 class="section-heading">Game Video</h2>
-                <iframe class="video-iframe" src="https://www.youtube.com/embed/goY-w1b-AXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe src="https://www.youtube.com/embed/goY-w1b-AXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
         </div>
         
@@ -109,9 +110,9 @@
                         <h3 class="card-title">Project Reflection</h3>
                         <p>The core achievement of our project was the development of a custom contact listener for the Box2D physics engine, enhancing the interaction between characters "Boy" and "Girl" and their environment in our game. This innovation allowed for precise collision handling and differentiation of physical interactions based on the entity types involved. By tracking contact normals and managing collision data efficiently, we significantly enriched the gameplay experience, providing a foundation for more nuanced and realistic physics responses.</p>
 
-                        <p>Despite these successes, we faced challenges in maintaining performance with increasing complexity and ensuring that physical responses remained intuitive under varied scenarios. The intricacies of accurately processing and responding to collisions required a delicate balance between realism and playability, highlighting areas for optimization and refinement.</p>
+<p></p>Despite these successes, we faced challenges in maintaining performance with increasing complexity and ensuring that physical responses remained intuitive under varied scenarios. The intricacies of accurately processing and responding to collisions required a delicate balance between realism and playability, highlighting areas for optimization and refinement.</p>
 
-                        <p>Given additional development time, our focus would shift towards enhancing the efficiency and realism of collision handling. We would explore advanced algorithms for collision detection and invest in fine-tuning the physics engine's responses to various interactions. This would not only improve game performance but also open up new possibilities for innovative gameplay mechanics, further elevating the player's experience.</p>
+<p></p>Given additional development time, our focus would shift towards enhancing the efficiency and realism of collision handling. We would explore advanced algorithms for collision detection and invest in fine-tuning the physics engine's responses to various interactions. This would not only improve game performance but also open up new possibilities for innovative gameplay mechanics, further elevating the player's experience.</p>
                     </div>
                 </div>
             </div>
