@@ -1,41 +1,87 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
     <title>Fire Boy and Water Girl</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body, html {
             height: 100%;
             margin: 0;
-            display: flex;
-            align-items: center;
-            flex-direction: column;
+        }
+        .content-wrapper {
+            padding: 20px;
         }
         img, iframe {
-            width: 1200px;
+            max-width: 100%;
+            height: auto;
+        }
+        .game-header {
+            text-align: center;
+            padding-bottom: 20px;
         }
     </style>
 </head>
 <body>
-    <h1>Fire Boy and Water Girl</h1>
-    <p>Yue Zhang(zhang.yue24@northeastern.edu)</p>
-    <br>
-    
-    <h2>Game Video</h2>
-    <!-- Embedded YouTube Video -->
-    <iframe src="https://www.youtube.com/embed/goY-w1b-AXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-    
-    <h2>Screenshots</h2>
-    
-    <h2>Documentation</h2>
-    <p><a href="/Docs/html/index.html">Link</a></p>
-    
-    <h2>Game Architecture</h2>
-    <img src="images/game-architecture.jpg" alt="Game Architecture" loading="lazy">
-    
-    <h2>Link to the binary</h2>
-    <p><a href="/Game.zip">Link</a></p>
+    <div class="container-fluid content-wrapper">
+        <div class="row">
+            <div class="col-12 game-header">
+                <h1>Fire Boy and Water Girl</h1>
+                <p>Yue Zhang(zhang.yue24@northeastern.edu)</p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Game Video</h2>
+                <!-- Embedded YouTube Video -->
+                <iframe src="https://www.youtube.com/embed/goY-w1b-AXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Screenshots</h2>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Documentation</h2>
+                <p><a href="/Docs/html/index.html">Link</a></p>
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Game Architecture</h2>
+                <img src="images/game-architecture.jpg" alt="Game Architecture" loading="lazy">
+            </div>
+        </div>
+        
+        <div class="row">
+            <div class="col-12">
+                <h2>Link to the binary</h2>
+                <p><a href="/Game.zip">Link</a></p>
+            </div>
+        </div>
 
-    <h2>Post Mortem</h2>
-    
+        <!-- Post Mortem Section -->
+        <div class="row">
+            <div class="col-12">
+                <h2>Post Mortem</h2>
+                <div class="card">
+                    <div class="card-body">
+                        <h3 class="card-title">Project Reflection</h3>
+                        <p class="card-text">The integration of Box2D for enhancing game physics proved to be a successful endeavor, significantly improving character interactions and the realism of environmental effects. While we accomplished a lot, there remains untapped potential for further optimization, particularly in refining collision handling and exploring advanced physics features that could introduce new gameplay mechanics.</p>
+                        <p class="card-text">Challenges such as performance optimization and ensuring fluid gameplay experiences were faced, but these hurdles have provided clear direction for future improvements. Expanding our use of Box2D to include features like fluids and soft bodies, as well as enhancing the front-end UI with modern frameworks like Bootstrap for a more intuitive user experience, are among the exciting possibilities we see moving forward.</p>
+                        <p class="card-text">Given more time, we are confident that these areas of focus could elevate the game to new heights, making "Fire Boy and Water Girl" not just a fun and engaging game but a showcase of cutting-edge web game development practices.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.12/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 </body>
 </html>
