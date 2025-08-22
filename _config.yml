@@ -1,0 +1,26 @@
+# Site settings
+title: Yue Zelda Zhang
+description: Personal Website
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://roelno.github.io" # the base hostname & protocol for your site
+
+# Build settings
+markdown: kramdown
+theme: minima # You can change this or use custom styles
+
+# Navigation menu
+navigation:
+  - title: Home
+    url: /
+  - title: About
+    url: /about/
+  - title: Projects
+    url: /projects/
+  - title: Photos
+    url: /photos/
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
