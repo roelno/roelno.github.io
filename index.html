@@ -3,123 +3,400 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fire Boy and Water Girl</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/css/bootstrap.min.css">
-<style>
-    body, html {
-        height: 100%;
-        margin: 50px; 
-        font-family: 'Nunito', sans-serif;
-        background-color: #f0f2f5;
-    }
-    .content-wrapper {
-        padding: 40px 0;
-    }
-    .game-header h1 {
-        color: #007bff;
-        margin-bottom: 0;
-    }
-    .game-header p {
-        color: #6c757d;
-    }
-    .section-heading {
-        color: #495057;
-        margin-bottom: 20px;
-        border-bottom: 2px solid #007bff;
-    }
-    .card {
-        box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.1);
-        transition: 0.3s;
-        border: none;
-    }
-    .card:hover {
-        box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
-    }
-    .custom-link, a {
-        color: #007bff;
-    }
-    .custom-link:hover, a:hover {
-        text-decoration: underline;
-    }
-    img {
-        max-width: 60%; 
-        height: auto;
-        border-radius: 5px;
-    }
-    iframe {
-        width: 100%; 
-        height: auto; 
-        aspect-ratio: 16 / 9;
-        border-radius: 5px;
-    }
-</style>
-
+    <title>Yue Zelda Zhang - Personal Website</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
-    <div class="container content-wrapper">
-        <div class="row">
-            <div class="col-12 game-header text-center">
-                <h1>Fire Boy and Water Girl</h1>
-                <p>Yue Zhang(zhang.yue24@northeastern.edu)</p>
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <a href="#home" class="nav-logo">zelda</a>
+            <ul class="nav-menu">
+                <li><a href="#about" class="nav-link">About Me</a></li>
+                <li class="nav-dropdown">
+                    <a href="#projects" class="nav-link">Projects <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#current-projects">Current Projects</a></li>
+                        <li><a href="#gsoc2025">GSoC 2025</a></li>
+                    </ul>
+                </li>
+                <li><a href="#photos" class="nav-link">Photos</a></li>
+            </ul>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
             </div>
         </div>
-        
-        <div class="row mb-4">
-            <div class="col-12">
-                <h2 class="section-heading">Game Video</h2>
-                <iframe src="https://www.youtube.com/embed/goY-w1b-AXY" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-            </div>
-        </div>
-        
-        <div class="row mb-4">
-            <div class="col-12">
-                <h2 class="section-heading">Screenshots</h2>
-                <img src="images/game_play.png">
-                <img src="images/game_editor.png">
-                <img src="images/game_editor_2.png">
-            </div>
-        </div>
-        
-        <div class="row mb-4">
-            <div class="col-12">
-                <h2 class="section-heading">Documentation</h2>
-                <p><a href="/Docs/html/index.html" class="custom-link">Link to Documentation</a></p>
-            </div>
-        </div>
-        
-        <div class="row mb-4">
-            <div class="col-12">
-                <h2 class="section-heading">Game Architecture</h2>
-                <img src="images/game-architecture.jpg" alt="Game Architecture" loading="lazy">
-            </div>
-        </div>
-        
-        <div class="row mb-4">
-            <div class="col-12">
-                <h2 class="section-heading">Link to the binary</h2>
-                <p><a href="/Game.zip" class="custom-link">Download Game</a></p>
-            </div>
-        </div>
+    </nav>
 
-        <!-- Post Mortem Section -->
-        <div class="row">
-            <div class="col-12">
-                <h2 class="section-heading">Post Mortem</h2>
-                <div class="card">
-                    <div class="card-body">
-                        <h3 class="card-title">Project Reflection</h3>
-                        <p>The core achievement of our project was the development of a custom contact listener for the Box2D physics engine, enhancing the interaction between characters "Boy" and "Girl" and their environment in our game. This innovation allowed for precise collision handling and differentiation of physical interactions based on the entity types involved. By tracking contact normals and managing collision data efficiently, we significantly enriched the gameplay experience, providing a foundation for more nuanced and realistic physics responses.</p>
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <h1 class="hero-title">Hi, I'm <span class="highlight">zelda</span></h1>
+            <p class="hero-subtitle">Developer | Open Source Contributor | GSoC 2025 Aspirant</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn btn-primary">Learn More</a>
+                <a href="https://github.com/zelda" class="btn btn-outline" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            </div>
+        </div>
+    </section>
 
-<p></p>Despite these successes, we faced challenges in maintaining performance with increasing complexity and ensuring that physical responses remained intuitive under varied scenarios. The intricacies of accurately processing and responding to collisions required a delicate balance between realism and playability, highlighting areas for optimization and refinement.</p>
+    <!-- About Me Section -->
+    <section id="about" class="section">
+        <div class="container">
+            <h2 class="section-title">About Me</h2>
+            <div class="about-content">
+                <div class="about-text">
+                    <h3>Hello! I'm zelda</h3>
+                    <p>
+                        I'm a passionate developer with a strong interest in open source contribution and software development.
+                        Currently preparing for Google Summer of Code 2025, I'm focused on contributing to meaningful projects
+                        that make a difference in the developer community.
+                    </p>
+                    <p>
+                        My journey in technology has been driven by curiosity and the desire to solve complex problems.
+                        I believe in the power of collaboration and the open-source philosophy of sharing knowledge
+                        to build better software together.
+                    </p>
+                    <div class="skills">
+                        <h4>Skills & Technologies</h4>
+                        <div class="skill-tags">
+                            <span class="tag">JavaScript</span>
+                            <span class="tag">Python</span>
+                            <span class="tag">React</span>
+                            <span class="tag">Node.js</span>
+                            <span class="tag">Git</span>
+                            <span class="tag">HTML/CSS</span>
+                            <span class="tag">C++</span>
+                            <span class="tag">Docker</span>
+                        </div>
+                    </div>
+                    <div class="about-links">
+                        <a href="https://github.com/zelda" class="social-link" target="_blank">
+                            <i class="fab fa-github"></i> GitHub
+                        </a>
+                        <a href="https://linkedin.com/in/zelda" class="social-link" target="_blank">
+                            <i class="fab fa-linkedin"></i> LinkedIn
+                        </a>
+                        <a href="mailto:your.email@example.com" class="social-link">
+                            <i class="fas fa-envelope"></i> Email
+                        </a>
+                    </div>
+                </div>
+                <div class="about-image">
+                    <img src="https://via.placeholder.com/400x400/667eea/ffffff?text=Your+Photo" alt="Profile Picture">
+                    <!-- Replace with your actual photo: <img src="images/profile.jpg" alt="zelda"> -->
+                </div>
+            </div>
+        </div>
+    </section>
 
-<p></p>Given additional development time, our focus would shift towards enhancing the efficiency and realism of collision handling. We would explore advanced algorithms for collision detection and invest in fine-tuning the physics engine's responses to various interactions. This would not only improve game performance but also open up new possibilities for innovative gameplay mechanics, further elevating the player's experience.</p>
+    <!-- Projects Section -->
+    <section id="projects" class="section section-alt">
+        <div class="container">
+            <h2 class="section-title">Projects</h2>
+            
+            <!-- Current Projects Subsection -->
+            <div id="current-projects" class="project-subsection">
+                <h3 class="subsection-title">Current Projects</h3>
+                <p class="subsection-description">Here are the projects I've been working on recently</p>
+                
+                <div class="projects-grid">
+                    <!-- Move your existing website content here as a project -->
+                    <div class="project-card featured">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/667eea/ffffff?text=Personal+Website" alt="Personal Website">
+                        </div>
+                        <div class="project-content">
+                            <span class="project-badge">Featured</span>
+                            <h3>Personal Portfolio Website</h3>
+                            <p>A responsive personal website built with HTML, CSS, and JavaScript. Features smooth animations, mobile-friendly design, and organized sections for showcasing projects and photography.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">HTML5</span>
+                                <span class="tech-tag">CSS3</span>
+                                <span class="tech-tag">JavaScript</span>
+                                <span class="tech-tag">GitHub Pages</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/zelda/zelda.github.io" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                                <a href="https://zelda.github.io" class="project-link" target="_blank">
+                                    <i class="fas fa-external-link-alt"></i> Live Site
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Add more of your current projects here -->
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/764ba2/ffffff?text=Project+2" alt="Project 2">
+                        </div>
+                        <div class="project-content">
+                            <h3>Project Name</h3>
+                            <p>Description of another project you're working on. Highlight the problem it solves and the technologies used.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">React</span>
+                                <span class="tech-tag">Node.js</span>
+                                <span class="tech-tag">MongoDB</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/zelda/project-name" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="project-card">
+                        <div class="project-image">
+                            <img src="https://via.placeholder.com/400x250/f093fb/ffffff?text=Project+3" alt="Project 3">
+                        </div>
+                        <div class="project-content">
+                            <h3>Another Project</h3>
+                            <p>Brief description of this project, its features, and what you learned while building it.</p>
+                            <div class="project-tech">
+                                <span class="tech-tag">Python</span>
+                                <span class="tech-tag">Flask</span>
+                                <span class="tech-tag">PostgreSQL</span>
+                            </div>
+                            <div class="project-links">
+                                <a href="https://github.com/zelda/another-project" class="project-link" target="_blank">
+                                    <i class="fab fa-github"></i> Code
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- GSoC 2025 Subsection -->
+            <div id="gsoc2025" class="project-subsection gsoc-section">
+                <h3 class="subsection-title">
+                    <img src="https://developers.google.com/open-source/gsoc/resources/downloads/GSoC-logo-horizontal.svg" alt="GSoC Logo" class="gsoc-logo">
+                    Google Summer of Code 2025
+                </h3>
+                <p class="subsection-description">My journey towards GSoC 2025 - Contributions, proposals, and preparation</p>
+                
+                <div class="gsoc-content">
+                    <!-- GSoC Status Card -->
+                    <div class="gsoc-status-card">
+                        <h4><i class="fas fa-info-circle"></i> Current Status</h4>
+                        <div class="status-timeline">
+                            <div class="timeline-item active">
+                                <span class="timeline-dot"></span>
+                                <div class="timeline-content">
+                                    <strong>Preparation Phase</strong>
+                                    <p>Contributing to potential organizations</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot"></span>
+                                <div class="timeline-content">
+                                    <strong>Application Period</strong>
+                                    <p>March - April 2025</p>
+                                </div>
+                            </div>
+                            <div class="timeline-item">
+                                <span class="timeline-dot"></span>
+                                <div class="timeline-content">
+                                    <strong>Coding Period</strong>
+                                    <p>May - August 2025</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Organizations I'm Contributing To -->
+                    <div class="gsoc-organizations">
+                        <h4><i class="fas fa-building"></i> Target Organizations</h4>
+                        <div class="org-cards">
+                            <div class="org-card">
+                                <h5>Organization Name 1</h5>
+                                <p>Brief description of the organization and why you're interested</p>
+                                <div class="org-stats">
+                                    <span><i class="fas fa-code-branch"></i> 5 PRs</span>
+                                    <span><i class="fas fa-bug"></i> 3 Issues</span>
+                                </div>
+                                <a href="#" class="org-link">View Contributions →</a>
+                            </div>
+                            <div class="org-card">
+                                <h5>Organization Name 2</h5>
+                                <p>Another organization you're contributing to</p>
+                                <div class="org-stats">
+                                    <span><i class="fas fa-code-branch"></i> 2 PRs</span>
+                                    <span><i class="fas fa-bug"></i> 1 Issue</span>
+                                </div>
+                                <a href="#" class="org-link">View Contributions →</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Contributions -->
+                    <div class="gsoc-contributions">
+                        <h4><i class="fas fa-code-branch"></i> Open Source Contributions</h4>
+                        <div class="contribution-list">
+                            <div class="contribution-item">
+                                <div class="contribution-header">
+                                    <span class="contribution-type pr">PR</span>
+                                    <a href="#" class="contribution-title">Fix: Resolved memory leak in data processing module</a>
+                                </div>
+                                <div class="contribution-meta">
+                                    <span><i class="fas fa-calendar"></i> Jan 15, 2025</span>
+                                    <span><i class="fas fa-project-diagram"></i> ProjectName</span>
+                                    <span class="contribution-status merged">Merged</span>
+                                </div>
+                            </div>
+                            <div class="contribution-item">
+                                <div class="contribution-header">
+                                    <span class="contribution-type issue">Issue</span>
+                                    <a href="#" class="contribution-title">Bug: Incorrect validation in form submission</a>
+                                </div>
+                                <div class="contribution-meta">
+                                    <span><i class="fas fa-calendar"></i> Jan 10, 2025</span>
+                                    <span><i class="fas fa-project-diagram"></i> AnotherProject</span>
+                                    <span class="contribution-status open">Open</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Proposal Ideas -->
+                    <div class="gsoc-proposals">
+                        <h4><i class="fas fa-lightbulb"></i> Proposal Ideas</h4>
+                        <div class="proposal-cards">
+                            <div class="proposal-card">
+                                <h5>Proposal Idea 1</h5>
+                                <p>Brief description of your GSoC proposal idea</p>
+                                <div class="proposal-tags">
+                                    <span>Machine Learning</span>
+                                    <span>Python</span>
+                                </div>
+                            </div>
+                            <div class="proposal-card">
+                                <h5>Proposal Idea 2</h5>
+                                <p>Another potential project proposal</p>
+                                <div class="proposal-tags">
+                                    <span>Web Development</span>
+                                    <span>JavaScript</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Resources -->
+                    <div class="gsoc-resources">
+                        <h4><i class="fas fa-book"></i> Helpful Resources</h4>
+                        <ul class="resource-list">
+                            <li><a href="https://summerofcode.withgoogle.com/" target="_blank">Official GSoC Website</a></li>
+                            <li><a href="#" target="_blank">My GSoC Preparation Blog</a></li>
+                            <li><a href="#" target="_blank">Contributing Guidelines</a></li>
+                        </ul>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/5.1.3/js/bootstrap.min.js"></script>
+    </section>
+
+    <!-- Photos Section -->
+    <section id="photos" class="section">
+        <div class="container">
+            <h2 class="section-title">Photos</h2>
+            <p class="section-subtitle">Moments captured through my lens</p>
+            
+            <div class="photo-categories">
+                <button class="category-btn active" data-category="all">All</button>
+                <button class="category-btn" data-category="nature">Nature</button>
+                <button class="category-btn" data-category="tech">Tech Events</button>
+                <button class="category-btn" data-category="travel">Travel</button>
+            </div>
+
+            <div class="photo-gallery">
+                <!-- Photo 1 -->
+                <div class="photo-item" data-category="nature">
+                    <img src="https://via.placeholder.com/400x300/667eea/ffffff?text=Nature+1" alt="Nature Photo">
+                    <div class="photo-overlay">
+                        <h4>Beautiful Landscape</h4>
+                        <p>Location Name</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 2 -->
+                <div class="photo-item" data-category="tech">
+                    <img src="https://via.placeholder.com/400x300/764ba2/ffffff?text=Tech+Event" alt="Tech Event">
+                    <div class="photo-overlay">
+                        <h4>Hackathon 2024</h4>
+                        <p>Team collaboration</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 3 -->
+                <div class="photo-item" data-category="travel">
+                    <img src="https://via.placeholder.com/400x300/f093fb/ffffff?text=Travel" alt="Travel Photo">
+                    <div class="photo-overlay">
+                        <h4>City Exploration</h4>
+                        <p>Urban adventures</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 4 -->
+                <div class="photo-item" data-category="nature">
+                    <img src="https://via.placeholder.com/400x300/4facfe/ffffff?text=Nature+2" alt="Nature Photo 2">
+                    <div class="photo-overlay">
+                        <h4>Sunset Views</h4>
+                        <p>Golden hour</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 5 -->
+                <div class="photo-item" data-category="tech">
+                    <img src="https://via.placeholder.com/400x300/00f2fe/ffffff?text=Workspace" alt="Workspace">
+                    <div class="photo-overlay">
+                        <h4>My Workspace</h4>
+                        <p>Where the magic happens</p>
+                    </div>
+                </div>
+                
+                <!-- Photo 6 -->
+                <div class="photo-item" data-category="travel">
+                    <img src="https://via.placeholder.com/400x300/43e97b/ffffff?text=Adventure" alt="Adventure">
+                    <div class="photo-overlay">
+                        <h4>Mountain Trek</h4>
+                        <p>Adventure time</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <p>&copy; 2025 zelda. Built with ❤️ and hosted on GitHub Pages</p>
+                <div class="social-links">
+                    <a href="https://github.com/zelda" target="_blank" title="GitHub">
+                        <i class="fab fa-github"></i>
+                    </a>
+                    <a href="https://linkedin.com/in/zelda" target="_blank" title="LinkedIn">
+                        <i class="fab fa-linkedin"></i>
+                    </a>
+                    <a href="https://twitter.com/zelda" target="_blank" title="Twitter">
+                        <i class="fab fa-twitter"></i>
+                    </a>
+                    <a href="mailto:your.email@example.com" title="Email">
+                        <i class="fas fa-envelope"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
 </body>
 </html>
