@@ -292,6 +292,18 @@ a:hover {
     color: var(--white);
 }
 
+/* 项目卡片链接包装器 */
+.project-card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+}
+
+.project-card-link:hover {
+    text-decoration: none;
+    border-bottom: none;
+}
+
 /* 项目卡片 - 悬浮设计 */
 .projects-grid {
     display: grid;
@@ -301,36 +313,124 @@ a:hover {
 }
 
 .project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;  /* 确保所有卡片高度一致 */
     background: var(--white);
     border: 1px solid var(--border-light);
-    transition: var(--transition-normal);
+    transition: all var(--transition-normal);
     overflow: hidden;
-    position: relative;
 }
 
 .project-card:hover {
-    transform: translateY(-5px);
+    transform: translateY(-8px);
     box-shadow: var(--shadow-heavy);
-    border-color: var(--border-dark);
+    border-color: transparent;
 }
 
+/* 卡片中的图片容器 - 固定高度 */
 .project-image {
     width: 100%;
-    height: 250px;
-    background: linear-gradient(135deg, var(--off-white) 0%, var(--pale-gray) 100%);
-    position: relative;
+    height: 220px;  /* 固定高度 */
     overflow: hidden;
+    background: linear-gradient(135deg, #f5f5f5, #e0e0e0);
+    position: relative;
+    flex-shrink: 0;  /* 防止被压缩 */
 }
 
+/* 卡片中的图片 - 覆盖模式 */
 .project-image img {
     width: 100%;
     height: 100%;
-    object-fit: cover;
-    transition: var(--transition-slow);
+    object-fit: cover;  /* 关键：裁剪以填满容器 */
+    object-position: center;  /* 居中裁剪 */
+    display: block;
+    transition: transform var(--transition-normal);
+}
+
+/* 如果不想要固定比例，完全自适应 */
+.project-image.fully-adaptive {
+    aspect-ratio: auto;  /* 或者直接不设置 */
+}
+
+.project-image.fully-adaptive img {
+    width: 100%;
+    height: auto;
 }
 
 .project-card:hover .project-image img {
     transform: scale(1.05);
+}
+
+
+/* Projects页面 - 项目卡片布局 */
+
+/* 项目卡片图片 - 完整显示不裁剪 */
+.project-card .project-image {
+    width: 100%;
+    min-height: 200px;  /* 设置最小高度，避免太小的图片 */
+    max-height: 350px;  /* 设置最大高度，避免太大的图片 */
+    background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: var(--spacing-sm);  /* 给图片一些内边距 */
+    position: relative;
+    overflow: hidden;
+}
+
+.project-card .project-image img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;  /* 关键：完整显示图片 */
+    display: block;
+    transition: transform var(--transition-normal);
+}
+
+/* 悬停效果 - 轻微放大 */
+.project-card:hover .project-image img {
+    transform: scale(1.05);
+}
+
+/* 为了保持卡片高度一致，使用 flexbox */
+.project-card {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    background: var(--white);
+    border: 1px solid var(--border-light);
+    transition: all var(--transition-normal);
+    overflow: hidden;
+}
+
+.project-content {
+    flex: 1;  /* 内容区域占据剩余空间 */
+    padding: var(--spacing-md);
+    display: flex;
+    flex-direction: column;
+}
+
+.project-description {
+    flex: 1;  /* 描述文字占据剩余空间 */
+    margin-bottom: var(--spacing-sm);
+}
+
+/* 确保所有卡片高度对齐 */
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+    align-items: stretch;  /* 所有卡片拉伸到相同高度 */
+}
+
+.project-card-link {
+    display: block;
+    text-decoration: none;
+    color: inherit;
+    height: 100%;
 }
 
 .project-content {
@@ -352,10 +452,27 @@ a:hover {
 }
 
 .project-tech {
-    display: flex;
-    flex-wrap: wrap;
-    gap: var(--spacing-xs);
-    margin-top: var(--spacing-sm);
+    margin-top: auto;  /* 技术标签推到底部 */
+}
+
+/* 确保项目标题不会有下划线 */
+.project-card .project-title {
+    color: var(--black);
+    transition: color var(--transition-fast);
+}
+
+.project-card:hover .project-title {
+    color: var(--medium-gray);
+}
+
+/* Projects页面的标题样式 */
+.projects-hero {
+    margin-bottom: var(--spacing-xl);
+    text-align: center;
+}
+
+.projects-hero h1 {
+    margin-bottom: var(--spacing-sm);
 }
 
 .tech-tag {
@@ -367,6 +484,97 @@ a:hover {
     letter-spacing: 0.02em;
     text-transform: uppercase;
 }
+
+/* 项目详情页样式 */
+.project-detail {
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.back-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: var(--gray);
+    font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
+    transition: var(--transition-fast);
+    border: none;
+}
+
+.back-link:hover {
+    color: var(--black);
+    transform: translateX(-3px);
+}
+
+.project-header {
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-header h1 {
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-meta {
+    color: var(--gray);
+    font-size: 1.1rem;
+    margin-bottom: var(--spacing-md);
+}
+
+.project-hero-image {
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+    background: var(--off-white);
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.project-overview {
+    margin-bottom: var(--spacing-xl);
+    padding-bottom: var(--spacing-xl);
+    border-bottom: 1px solid var(--border-light);
+}
+
+.project-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: var(--spacing-lg);
+    margin-top: var(--spacing-lg);
+}
+
+.info-item h3 {
+    font-size: 0.9rem;
+    font-family: 'Inter', sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--gray);
+    font-weight: 600;
+    margin-bottom: var(--spacing-sm);
+}
+
+.project-content {
+    line-height: 1.8;
+}
+
+.project-content h2 {
+    margin-top: var(--spacing-lg);
+    margin-bottom: var(--spacing-md);
+}
+
+.project-content img {
+    width: 100%;
+    margin: var(--spacing-md) 0;
+}
+
+
+
+
 
 /* About页面 - 个人介绍 */
 .about-header {
@@ -443,6 +651,41 @@ a:hover {
     background: var(--black);
     transition: width 1.5s ease;
 }
+
+
+
+
+/* --------------- 文章内容和图片排版 --------------*/
+
+/* 项目详情页和文章内的图片 */
+.project-detail .project-hero-image {
+    width: 100%;
+    max-height: 500px;
+    overflow: hidden;
+    background: var(--off-white);
+    margin-bottom: var(--spacing-xl);
+}
+
+.project-detail .project-hero-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;  /* 详情页主图可以裁剪 */
+}
+
+/* 文章内容中的图片 */
+.project-content img,
+.container article img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: var(--spacing-md) auto;
+}
+
+
+
+
+
+
 
 /* 照片画廊 - 网格布局 */
 .photo-gallery {

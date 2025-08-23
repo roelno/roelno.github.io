@@ -1,0 +1,43 @@
+- title: "Google Summer of Code 2025 Developer"
+  description: "iOS Developer of the Open source project 'VideoLAN' under the mentorship of VideoLAN organization."
+  image: "/assets/images/projects/gsoc2025/vlc.png"
+  image_bg: white
+  url: "/projects/gsoc2025/"
+  technologies:
+    - Swift
+    - Objective-C
+    - C
+    - iOS
+    - Git
+  github: "https://github.com/yourusername/ecommerce"
+  demo: "https://demo-ecommerce.com"
+
+- title: "AI Chat Assistant"
+  description: "An intelligent chatbot powered by machine learning for customer service automation."
+  image: "/assets/images/project2.jpg"
+  url: "/projects/ai-chat-assistant/"
+  technologies:
+    - Python
+    - TensorFlow
+    - FastAPI
+    - Redis
+
+- title: "Task Management App"
+  description: "A collaborative project management tool with real-time updates and team features."
+  image: "/assets/images/project3.jpg"
+  url: "/projects/task-management/"
+  technologies:
+    - Vue.js
+    - Express
+    - PostgreSQL
+    - Socket.io
+
+- title: "Data Visualization Dashboard"
+  description: "Interactive dashboard for complex data analysis with beautiful charts and insights."
+  image: "/assets/images/project4.jpg"
+  url: "/projects/data-dashboard/"
+  technologies:
+    - D3.js
+    - React
+    - Python
+    - AWS

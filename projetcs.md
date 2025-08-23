@@ -6,45 +6,38 @@ permalink: /projects/
 
 # My Projects
 
-Here are some of the projects I've been working on:
+<p class="hero-subtitle">A collection of my recent work and experiments</p>
 
-## Featured Projects
-
-### Project Name 1
-**Technologies**: JavaScript, React, Node.js  
-**Year**: 2024
-
-Description of your project. What problem does it solve? What did you learn?
-
-[View Project](https://github.com/roelno/project1) | [Live Demo](https://project1.example.com)
-
----
-
-### Project Name 2
-**Technologies**: Python, Django, PostgreSQL  
-**Year**: 2023
-
-Another project description. Explain the challenges and solutions.
-
-[View Project](https://github.com/roelno/project2) | [Live Demo](https://project2.example.com)
-
----
-
-### Project Name 3
-**Technologies**: HTML, CSS, JavaScript  
-**Year**: 2023
-
-Description of this project and its impact.
-
-[View Project](https://github.com/roelno/project3)
-
-## Other Projects
-
-- **Mini Project 1** - Brief description ([GitHub](link))
-- **Mini Project 2** - Brief description ([GitHub](link))
-- **Mini Project 3** - Brief description ([GitHub](link))
-
-## Open Source Contributions
-
-- Contributed to [Project Name](link) - Description of contribution
-- Fixed bugs in [Project Name](link) - What you fixed
+<div class="projects-grid">
+    {% for project in site.data.projects %}
+    <a href="{{ project.url }}" class="project-card-link">
+        <article class="project-card">
+            <div class="project-image" 
+                 {% if project.image_bg %}
+                 style="background: {{ project.image_bg }};"
+                 {% endif %}>
+                {% if project.image %}
+                <img src="{{ project.image }}" 
+                     alt="{{ project.title }}"
+                     loading="lazy">
+                {% else %}
+                <div class="image-placeholder">
+                    <i class="fas fa-image fa-3x" style="color: #ccc;"></i>
+                </div>
+                {% endif %}
+            </div>
+            <div class="project-content">
+                <h3 class="project-title">{{ project.title }}</h3>
+                <p class="project-description">
+                    {{ project.description }}
+                </p>
+                <div class="project-tech">
+                    {% for tech in project.technologies %}
+                    <span class="tech-tag">{{ tech }}</span>
+                    {% endfor %}
+                </div>
+            </div>
+        </article>
+    </a>
+    {% endfor %}
+</div>

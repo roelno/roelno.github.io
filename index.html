@@ -5,50 +5,41 @@ title: Home
 
 <div class="hero">
     <div class="hero-content">
-        <h1>Hello, I'm <strong>Zelda</strong></h1>
-        <p class="hero-subtitle">iOS Developer & Android Developer</p>
+        <h1>Hello, I'm <strong>Yue Zelda Zhang</strong></h1>
+        <p class="hero-subtitle">Creative Developer & Digital Craftsman</p>
         <div class="hero-actions">
-            <a href="/about/" class="btn btn-primary">Discover My Work</a>
-            <a href="/contact/" class="btn btn-secondary">Get In Touch</a>
+            <a href="/projects/" class="btn btn-primary">View My Work</a>
+            <a href="#contact" class="btn btn-secondary">Get In Touch</a>
         </div>
     </div>
 </div>
 
 <section class="mt-lg">
-    <h2>Selected Projects</h2>
+    <h2>Featured Projects</h2>
     <div class="projects-grid">
-        <article class="project-card">
-            <div class="project-image">
-                <img src="/assets/images/project1.jpg" alt="Project 1">
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Project Title One</h3>
-                <p class="project-description">
-                    A sophisticated solution that combines elegant design with powerful functionality.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">React</span>
-                    <span class="tech-tag">Node.js</span>
-                    <span class="tech-tag">PostgreSQL</span>
+        {% for project in site.data.projects limit:2 %}
+        <a href="{{ project.url }}" class="project-card-link">
+            <article class="project-card">
+                <div class="project-image">
+                    <img src="{{ project.image }}" alt="{{ project.title }}">
                 </div>
-            </div>
-        </article>
-        
-        <article class="project-card">
-            <div class="project-image">
-                <img src="/assets/images/project2.jpg" alt="Project 2">
-            </div>
-            <div class="project-content">
-                <h3 class="project-title">Project Title Two</h3>
-                <p class="project-description">
-                    Minimalist approach to complex problems with attention to every detail.
-                </p>
-                <div class="project-tech">
-                    <span class="tech-tag">Python</span>
-                    <span class="tech-tag">Django</span>
-                    <span class="tech-tag">AWS</span>
+                <div class="project-content">
+                    <h3 class="project-title">{{ project.title }}</h3>
+                    <p class="project-description">
+                        {{ project.description }}
+                    </p>
+                    <div class="project-tech">
+                        {% for tech in project.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
                 </div>
-            </div>
-        </article>
+            </article>
+        </a>
+        {% endfor %}
+    </div>
+    
+    <div class="text-center mt-lg">
+        <a href="/projects/" class="btn btn-secondary">View All Projects</a>
     </div>
 </section>
