@@ -207,7 +207,7 @@ p {
 a {
     color: var(--black);
     text-decoration: none;
-    border-bottom: 1px solid var(--pale-gray);
+    /* border-bottom: 1px solid var(--pale-gray); */
     transition: var(--transition-fast);
 }
 
@@ -511,9 +511,12 @@ footer {
     max-width: 1400px;
     margin: 0 auto;
     padding: 0 var(--spacing-lg);
-    display: grid;
-    grid-template-columns: 2fr 1fr 1fr;
-    gap: var(--spacing-xl);
+    text-align: center;  /* 居中对齐 */
+}
+
+.footer-brand {
+    max-width: 600px;  /* 限制宽度 */
+    margin: 0 auto;    /* 居中 */
 }
 
 .footer-brand h3 {
@@ -526,31 +529,14 @@ footer {
 .footer-brand p {
     color: var(--light-gray);
     font-size: 0.95rem;
+    margin-bottom: var(--spacing-md);
 }
 
-.footer-links h4 {
-    font-family: 'Inter', sans-serif;
-    font-size: 0.9rem;
-    font-weight: 600;
-    letter-spacing: 0.05em;
-    text-transform: uppercase;
-    margin-bottom: var(--spacing-sm);
-    color: var(--white);
-}
-
-.footer-links ul {
-    list-style: none;
-}
-
-.footer-links a {
-    color: var(--light-gray);
-    font-size: 0.95rem;
-    border: none;
-    transition: var(--transition-fast);
-}
-
-.footer-links a:hover {
-    color: var(--white);
+.social-links {
+    display: flex;
+    justify-content: center;  /* 社交图标居中 */
+    gap: var(--spacing-sm);
+    margin-top: var(--spacing-md);
 }
 
 .footer-bottom {
@@ -570,19 +556,28 @@ footer {
 }
 
 .social-links a {
-    width: 40px;
-    height: 40px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
+    width: 45px;
+    height: 45px;
+    border: 2px solid rgba(255, 255, 255, 0.2);
+    background: rgba(255, 255, 255, 0.1);  /* 默认就有背景 */
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: var(--transition-fast);
+    transition: all var(--transition-normal);
+    color: var(--white);  /* 图标始终是白色 */
+    border-radius: 50%;  /* 圆形按钮 */
 }
 
 .social-links a:hover {
     background: var(--white);
     color: var(--black);
     border-color: var(--white);
+    transform: translateY(-5px) scale(1.1);  /* 悬停时放大并上移 */
+    box-shadow: 0 10px 20px rgba(255, 255, 255, 0.2);  /* 添加光晕效果 */
+}
+
+.social-links a i {
+    font-size: 1.3rem;
 }
 
 /* 代码块样式 */
