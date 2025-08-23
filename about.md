@@ -37,6 +37,6 @@ When I'm not coding, you can find me:
 
 ## Contact
 
-- Email: your.email@example.com
-- LinkedIn: [Your LinkedIn](https://linkedin.com/in/yourprofile)
+- Email: lichtseeker@gmail.com
+- LinkedIn: [Your LinkedIn](https://www.linkedin.com/in/zelda-zhang/)
 - GitHub: [@roelno](https://github.com/roelno)
