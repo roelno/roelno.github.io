@@ -20,8 +20,19 @@ title: Home
         {% for project in site.data.projects limit:2 %}
         <a href="{{ project.url }}" class="project-card-link">
             <article class="project-card">
-                <div class="project-image">
-                    <img src="{{ project.image }}" alt="{{ project.title }}">
+                <div class="project-image" 
+                     {% if project.image_bg %}
+                     style="background: {{ project.image_bg }};"
+                     {% endif %}>
+                    {% if project.image %}
+                    <img src="{{ project.image }}" 
+                         alt="{{ project.title }}"
+                         loading="lazy">
+                    {% else %}
+                    <div class="image-placeholder">
+                        <i class="fas fa-image fa-3x" style="color: #ccc;"></i>
+                    </div>
+                    {% endif %}
                 </div>
                 <div class="project-content">
                     <h3 class="project-title">{{ project.title }}</h3>
