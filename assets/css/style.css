@@ -365,11 +365,11 @@ a:hover {
 
 /* Projects页面 - 项目卡片布局 */
 
-/* 项目卡片图片 - 完整显示不裁剪 */
+/* 项目卡片图片 - 完整显示不裁剪，优化的约束 */
 .project-card .project-image {
     width: 100%;
     min-height: 200px;  /* 设置最小高度，避免太小的图片 */
-    max-height: 350px;  /* 设置最大高度，避免太大的图片 */
+    max-height: 300px;  /* 设置最大高度，避免太大的图片 */
     background: linear-gradient(135deg, #f5f5f5, #e8e8e8);
     display: flex;
     align-items: center;
@@ -380,11 +380,11 @@ a:hover {
 }
 
 .project-card .project-image img {
-    max-width: 100%;
-    max-height: 100%;
+    max-width: calc(100% - 2 * var(--spacing-sm));  /* 考虑内边距 */
+    max-height: calc(100% - 2 * var(--spacing-sm));  /* 考虑内边距 */
     width: auto;
     height: auto;
-    object-fit: contain;  /* 关键：完整显示图片 */
+    object-fit: contain;  /* 关键：完整显示图片，保持比例 */
     display: block;
     transition: transform var(--transition-normal);
 }
@@ -523,16 +523,24 @@ a:hover {
 
 .project-hero-image {
     width: 100%;
-    height: 500px;
+    max-width: 800px;  /* 固定最大宽度 */
+    max-height: 400px; /* 减小最大高度 */
     overflow: hidden;
     background: var(--off-white);
-    margin-bottom: var(--spacing-xl);
+    margin: 0 auto var(--spacing-xl);  /* 居中显示 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .project-hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;  /* 保持比例，完整显示图片 */
+    object-position: center;  /* 确保图片居中 */
 }
 
 .project-overview {
@@ -660,25 +668,73 @@ a:hover {
 /* 项目详情页和文章内的图片 */
 .project-detail .project-hero-image {
     width: 100%;
-    max-height: 500px;
+    max-width: 800px;  /* 固定最大宽度 */
+    max-height: min(400px, 50vh);  /* 限制为400px或视口高度50%，取较小值 */
     overflow: hidden;
     background: var(--off-white);
-    margin-bottom: var(--spacing-xl);
+    margin: 0 auto var(--spacing-xl);  /* 居中显示 */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-sizing: border-box;
 }
 
 .project-detail .project-hero-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;  /* 详情页主图可以裁剪 */
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;  /* 保持比例，完整显示图片 */
+    object-position: center;  /* 确保图片居中 */
 }
 
 /* 文章内容中的图片 */
 .project-content img,
 .container article img {
     max-width: 100%;
+    max-height: 600px;  /* 设置最大高度限制 */
+    width: auto;
     height: auto;
+    object-fit: contain;  /* 保持比例，确保图片完整显示 */
     display: block;
     margin: var(--spacing-md) auto;
+}
+
+/* 通用图片约束 - 确保所有图片都有合理的最大尺寸 */
+img {
+    max-width: 100%;
+    height: auto;
+    object-fit: contain;  /* 保持宽高比 */
+}
+
+/* 为容器内的图片提供额外约束 */
+.container img,
+article img {
+    max-height: 80vh;  /* 最大高度不超过视口高度的80% */
+}
+
+/* 超大图片的特殊处理 - 确保极端尺寸的图片也能正确显示 */
+.container img[width],
+.container img[height],
+article img[width],
+article img[height] {
+    width: auto !important;
+    height: auto !important;
+    max-width: 100% !important;
+    max-height: 80vh !important;
+}
+
+/* 响应式图片约束 - 移动设备上进一步限制高度 */
+@media (max-width: 768px) {
+    .container img,
+    article img,
+    .project-content img {
+        max-height: 60vh;  /* 移动设备上限制为视口高度的60% */
+    }
+    
+    .project-hero-image {
+        max-height: 300px;  /* 移动设备上的英雄图片高度限制 */
+    }
 }
 
 
