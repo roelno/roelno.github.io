@@ -762,13 +762,7 @@ article img[height] {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    filter: grayscale(100%);
-    transition: var(--transition-slow);
-}
-
-.photo-item:hover img {
     filter: grayscale(0%);
-    transform: scale(1.05);
 }
 
 .photo-overlay {
@@ -780,11 +774,6 @@ article img[height] {
     background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, transparent 100%);
     color: var(--white);
     transform: translateY(100%);
-    transition: var(--transition-normal);
-}
-
-.photo-item:hover .photo-overlay {
-    transform: translateY(0);
 }
 
 .photo-title {
