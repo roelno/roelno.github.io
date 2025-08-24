@@ -75,6 +75,59 @@
                 });
             });
         });
+        // 照片灯箱功能
+        document.addEventListener('DOMContentLoaded', function() {
+            // 创建灯箱元素
+            const lightbox = document.createElement('div');
+            lightbox.className = 'lightbox';
+            lightbox.innerHTML = `
+                <div class="lightbox-content">
+                    <button class="lightbox-close">&times;</button>
+                    <img class="lightbox-image" src="" alt="">
+                </div>
+            `;
+            document.body.appendChild(lightbox);
+
+            const lightboxImage = lightbox.querySelector('.lightbox-image');
+            const closeBtn = lightbox.querySelector('.lightbox-close');
+
+            // 为所有照片添加点击事件
+            document.querySelectorAll('.photo-item img').forEach(img => {
+                img.addEventListener('click', function() {
+                    lightboxImage.src = this.src;
+                    lightboxImage.alt = this.alt;
+                    lightbox.style.display = 'block';
+                    setTimeout(() => lightbox.classList.add('show'), 10);
+                    document.body.style.overflow = 'hidden';
+                });
+            });
+
+            // 关闭灯箱
+            function closeLightbox() {
+                lightbox.classList.remove('show');
+                setTimeout(() => {
+                    lightbox.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }, 300);
+            }
+
+            // 点击关闭按钮
+            closeBtn.addEventListener('click', closeLightbox);
+
+            // 点击背景关闭
+            lightbox.addEventListener('click', function(e) {
+                if (e.target === lightbox) {
+                    closeLightbox();
+                }
+            });
+
+            // 按ESC键关闭
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && lightbox.classList.contains('show')) {
+                    closeLightbox();
+                }
+            });
+        });
     </script>
 </body>
 </html>
