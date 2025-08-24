@@ -12,32 +12,45 @@
   github: "https://github.com/yourusername/ecommerce"
   demo: "https://demo-ecommerce.com"
 
-- title: "AI Chat Assistant"
-  description: "An intelligent chatbot powered by machine learning for customer service automation."
-  image: "/assets/images/project2.jpg"
-  url: "/projects/ai-chat-assistant/"
+- title: "Platform Adventure Game Engine (C++)"
+  description: "A Game engine built from scratch using C."
+  image: "/assets/images/projects/game_engine/game-architecture.jpg"
+  url: "/projects/game-engine/"
   technologies:
-    - Python
-    - TensorFlow
-    - FastAPI
-    - Redis
+    - C++
+    - SDL3
+    - OpenGL
 
-- title: "Task Management App"
-  description: "A collaborative project management tool with real-time updates and team features."
-  image: "/assets/images/project3.jpg"
-  url: "/projects/task-management/"
+- title: "Computer Graphics Library from Scratch (C)"
+  description: "A comprehensive library for 2D and 3D graphics rendering, built from scratch."
+  image: "/assets/images/projects/graphics/stanford_bunny.png"
+  url: "/projects/computer-graphics-library/"
   technologies:
-    - Vue.js
-    - Express
-    - PostgreSQL
-    - Socket.io
+    - C
+    - OpenGL
 
-- title: "Data Visualization Dashboard"
-  description: "Interactive dashboard for complex data analysis with beautiful charts and insights."
-  image: "/assets/images/project4.jpg"
-  url: "/projects/data-dashboard/"
+- title: "Asian Yelp App (React Native)"
+  description: "A mobile app that provides reviews and recommendations for Asian restaurants."
+  image: "/assets/images/projects/asian_yelp_app.jpg"
+  url: "/projects/asian-yelp-app/"
   technologies:
-    - D3.js
-    - React
-    - Python
-    - AWS
+    - React Native
+    - JavaScript
+    - Firebase
+
+- title: "Hackers News (Android/Kotlin)"
+  description: "An Android app that fetches and displays news articles from Hacker News."
+  image: "/assets/images/projects/hackers_news_app.jpg"
+  url: "/projects/hackers-news-app/"
+  technologies:
+    - Kotlin
+    - Android
+    - REST API
+
+- title: "AI Language Learning Chatbot using BERT"
+  description: "A chatbot that helps users learn new languages using BERT for natural language processing."
+  image: "/assets/images/projects/ai_language_chatbot.jpg"
+  url: "/projects/ai-language-chatbot/"
+  technologies:
+    - BERT
+    - NLP
