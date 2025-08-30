@@ -7,9 +7,11 @@ layout: default
     <div class="project-header">
         <img src="{{ page.image }}" alt="{{ page.title }}" class="project-hero-image">
         <h1>{{ page.title }}</h1>
-        <p>{{ page.header_paragraph }}</p>
     </div>
     <div class="project-body">
+        </div>
+        <div class="project-body">
+                <p><strong>Mentors:</strong> {{ page.mentors | remove: 'Mentors:' | remove: '**Mentors**:' }}</p>
         <h2>Overview</h2>
         <p>{{ page.overview }}</p>
 
@@ -68,12 +70,15 @@ layout: default
         </table>
 
         <h2>Technical Stack</h2>
-        <p>{{ page.technical_stack }}</p>
+        <span><strong>Languages:</strong> {{ page.languages }}</span><br>
+        <span><strong>Frameworks:</strong> {{ page.frameworks }}</span><br>
+        <span><strong>Tools:</strong> {{ page.tools }}</span><br>
+        <span><strong>Platforms:</strong> {{ page.platforms }}</span><br>
 
         {% for feature in page.features %}
         <h3>{{ feature.title }}</h3>
-        <p>{{ feature.problem }}</p>
-        <p>{{ feature.solution }}</p>
+        <p>{{ feature.problem | replace: 'Problem:', '<strong>Problem:</strong>' }}</p>
+        <p>{{ feature.solution | replace: 'Solution:', '<strong>Solution:</strong>' | replace: 'Investigation & Discovery:', '<strong>Investigation & Discovery:</strong>' }}</p>
         {% if feature.image %}
             <img src="{{ feature.image }}" alt="{{ feature.title }} image">
         {% endif %}
@@ -83,12 +88,16 @@ layout: default
         {% endfor %}
 
         <h2>Challenges</h2>
-        <p>{{ page.challenges }}</p>
+        <p>{{ page.challenges1 | replace: 'Build System Complexity: ', '<strong>Build System Complexity: </strong>' }}</p>
+        <p>{{ page.challenges2 | replace: 'API Limitations Discovery: ', '<strong>API Limitations Discovery: </strong>' }}</p>
+        <p>{{ page.challenges3 | replace: 'Cross-Platform Compatibility: ', '<strong>Cross-Platform Compatibility: </strong>' }}</p>
 
         <h2>Left to Do</h2>
         <p>{{ page.left_to_do }}</p>
 
         <h2>Acknowledgments</h2>
-        <p>{{ page.acknowledgments }}</p>
+        <p>{{ page.acknowledgments1 }}</p>
+        <p>{{ page.acknowledgments2 }}</p>
+        <p>{{ page.acknowledgments3 }}</p>
     </div>
 </article>

@@ -5,8 +5,8 @@ permalink: /projects/gsoc2025/
 date: 2025-03-01
 image: "/assets/images/projects/gsoc2025/vlc.png"
 
-# Main header paragraph
-header_paragraph: "Mentors:Felix Paul Kühne, Diogo Simao Marques"
+# Mentors
+mentors: "**Mentors**: Felix Paul Kühne, Diogo Simao Marques"
 
 # Overview section
 overview: "From May to August 2025, I participated in Google Summer of Code (GSoC) with VideoLAN, one of the most impactful open-source multimedia organizations. Under the exceptional mentorship of Felix Paul Kühne and Diogo Simao Marques, I focused on enhancing the user interface and core functionality of the VLC iOS application, with the goal of improving user experience and introducing innovative features for mobile media consumption."
@@ -54,7 +54,10 @@ achievements_table:
     col4: "⏳ Pending merge"
 
 # Technical stack section
-technical_stack: "Languages: Objective-C, Swift. Frameworks: UIKit, VLCKit, MediaLibraryKit. Tools: Xcode, Git, GitLab CI/CD. Platforms: iOS 13.0+, iPadOS."
+languages: "Objective-C, Swift"
+frameworks: "UIKit, VLCKit, MediaLibraryKit"
+tools: "Xcode, Git, GitLab CI/CD"
+platforms: "iOS 13.0+, iPadOS"
 
 # Feature details section (5 features)
 features:
@@ -75,11 +78,15 @@ features:
     solution: "Solution: This feature required coordinated changes across two layers of the VLC iOS stack. At the VLCKit level, I designed and implemented batch subtitle selection APIs that allow atomic selection of multiple subtitle tracks, replacing the previous single-track limitation. This new API prevents race conditions that occurred when users rapidly switched between subtitles, as the old implementation would sometimes result in incorrect or missing subtitle displays. At the iOS application layer, I refactored VLCPlaybackServices to leverage existing and my new VLCKit capabilities, implementing a dual-track management system that maintains state for both primary and secondary subtitles. The UI displays the primary subtitle in the traditional bottom position while the secondary appears above it, with both tracks remaining perfectly synchronized during playback. This enhancement particularly benefits language learners who can now compare original dialogue with translations in real-time, and the atomic selection mechanism ensures reliable subtitle switching even in complex media files with numerous subtitle tracks."
 
 # Challenges section
-challenges: "Build system complexity, API limitations, and cross-platform compatibility. Required patching, extending APIs, and defensive coding for Apple platforms."
+challenges1: "Build System Complexity: The most significant initial challenge was understanding VLCKit's complex build system. Successfully building and running VLCKit required applying multiple patches via git am, understanding intricate dependency relationships between modules, and navigating the interaction between the iOS app and underlying libraries. "
+challenges2: "API Limitations Discovery: Initially, I assumed VLCKit's existing API was fully capable of supporting my planned features. However, through persistent debugging, I discovered that some functionality gaps were actually in the API layer itself—particularly around handling multiple simultaneous subtitle tracks and race conditions in asynchronous media loading. This realization led me to extend VLCKit's capabilities rather than just building on top of it, resulting in improvements that now benefit all VLC apple platforms, not just iOS."
+challenges3: "Cross-Platform Compatibility: One of the most educational challenges was dealing with CI pipeline failures across Apple's ecosystem. My merge requests would sometimes pass iOS tests but fail on visionOS, tvOS, or other platforms I hadn't initially considered. This was my first experience parsing through lengthy error logs to identify platform-specific issues—learning that a feature working perfectly on iOS doesn't guarantee compatibility with tvOS's or visionOS's unique requirements. Each failure taught me to write more defensive code and consider the broader Apple ecosystem from the start."
 
 # Left to do section
-left_to_do: "Implement persistent storage for secondary subtitle selection and coordinate with Android team for MediaLibraryKit changes. Continue refining features based on user feedback."
+left_to_do: "The dual subtitle feature is nearly complete, with one remaining task: implementing persistent storage for the secondary subtitle selection. This requires coordination with the Android team to ensure our MediaLibraryKit modifications align with their implementation, as both platforms share the same underlying media database. Beyond this, I plan to continue refining the features based on user feedback and contributing to VLC's broader ecosystem."
 
 # Acknowledgments section
-acknowledgments: "Thanks to mentors Felix Paul Kühne and Diogo Simao Marques for their support and guidance, and to the VideoLAN community for their welcoming attitude and commitment to open-source excellence."
+acknowledgments1: "I am deeply grateful to my mentors Felix Paul Kühne and Diogo Simao Marques for their support, patience, and expertise throughout this journey. Their thorough code reviews, technical expertise, and patience in answering my questions were invaluable in helping me navigate the complexities of the VLC codebase and deliver quality contributions."
+acknowledgments2: "Working with VideoLAN has been transformative. The opportunity to contribute to software used by millions globally, collaborate with talented developers from diverse backgrounds, and tackle complex technical challenges has been invaluable for my professional growth."
+acknowledgments3: "Special thanks to the entire VideoLAN community for their welcoming attitude, constructive feedback, and commitment to open-source excellence."
 ---
