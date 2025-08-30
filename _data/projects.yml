@@ -3,6 +3,7 @@
   image: "/assets/images/projects/gsoc2025/vlc.png"
   image_bg: white
   url: "/projects/gsoc2025/"
+  project_type: "gsoc"
   technologies:
     - Swift
     - Objective-C
@@ -16,6 +17,7 @@
   description: "A Game engine built from scratch using C."
   image: "/assets/images/projects/game_engine/game-architecture.jpg"
   url: "/projects/game-engine/"
+  project_type: "game"
   technologies:
     - C++
     - SDL3
@@ -25,6 +27,7 @@
   description: "A comprehensive library for 2D and 3D graphics rendering, built from scratch."
   image: "/assets/images/projects/graphics/stanford_bunny.png"
   url: "/projects/computer-graphics-library/"
+
   technologies:
     - C
     - OpenGL
@@ -33,6 +36,7 @@
   description: "A mobile app that provides reviews and recommendations for Asian restaurants."
   image: "/assets/images/projects/asian_yelp_app.jpg"
   url: "/projects/asian-yelp-app/"
+
   technologies:
     - React Native
     - JavaScript
@@ -42,6 +46,7 @@
   description: "An Android app that fetches and displays news articles from Hacker News."
   image: "/assets/images/projects/hackers_news_app.jpg"
   url: "/projects/hackers-news-app/"
+  project_type: "app"
   technologies:
     - Kotlin
     - Android
@@ -51,6 +56,7 @@
   description: "A chatbot that helps users learn new languages using BERT for natural language processing."
   image: "/assets/images/projects/ai_language_chatbot.jpg"
   url: "/projects/ai-language-chatbot/"
+  project_type: "deep-learning"
   technologies:
     - BERT
     - NLP

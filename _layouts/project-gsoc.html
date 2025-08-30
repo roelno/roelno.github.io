@@ -1,0 +1,65 @@
+---
+layout: default
+---
+
+
+<article class="project-detail gsoc-project">
+    <div class="project-header">
+        <img src="{{ page.image }}" alt="{{ page.title }}" class="project-hero-image">
+        <h1>{{ page.title }}</h1>
+        <p>{{ page.header_paragraph }}</p>
+    </div>
+    <div class="project-body">
+        <h2>Overview</h2>
+        <p>{{ page.overview }}</p>
+
+        <h2>Project Achievements</h2>
+        <p>{{ page.achievements }}</p>
+
+        <h2>Achievements Table</h2>
+        <table class="achievements-table">
+            <thead>
+                <tr>
+                    <th>Column 1</th>
+                    <th>Column 2</th>
+                    <th>Column 3</th>
+                    <th>Column 4</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for row in page.achievements_table %}
+                <tr>
+                    <td>{{ row.col1 }}</td>
+                    <td>{{ row.col2 }}</td>
+                    <td>{{ row.col3 }}</td>
+                    <td>{{ row.col4 }}</td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+
+        <h2>Technical Stack</h2>
+        <p>{{ page.technical_stack }}</p>
+
+        {% for feature in page.features %}
+        <h3>{{ feature.title }}</h3>
+        <p>{{ feature.problem }}</p>
+        <p>{{ feature.solution }}</p>
+        {% if feature.image %}
+            <img src="{{ feature.image }}" alt="{{ feature.title }} image">
+        {% endif %}
+        {% if feature.link %}
+            <a href="{{ feature.link }}">Learn more</a>
+        {% endif %}
+        {% endfor %}
+
+        <h2>Challenges</h2>
+        <p>{{ page.challenges }}</p>
+
+        <h2>Left to Do</h2>
+        <p>{{ page.left_to_do }}</p>
+
+        <h2>Acknowledgments</h2>
+        <p>{{ page.acknowledgments }}</p>
+    </div>
+</article>

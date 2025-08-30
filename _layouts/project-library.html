@@ -1,0 +1,179 @@
+---
+layout: default
+---
+
+<article class="project-detail library-project">
+    <div class="project-header">
+        <a href="/projects/" class="back-link">
+            <i class="fas fa-arrow-left"></i> Back to Projects
+        </a>
+        
+        <h1>{{ page.title }}</h1>
+        <p class="project-meta">{{ page.date | date: "%B %Y" }}</p>
+        
+        <div class="project-hero-image">
+            <img src="{{ page.image }}" alt="{{ page.title }}">
+        </div>
+    </div>
+    
+    <div class="project-body">
+        <div class="project-overview">
+            <h2>Overview</h2>
+            <p>{{ page.description }}</p>
+            
+            <div class="project-info">
+                {% if page.library_type %}
+                <div class="info-item">
+                    <h3>Library Type</h3>
+                    <p class="library-type">{{ page.library_type }}</p>
+                </div>
+                {% endif %}
+                
+                <div class="info-item">
+                    <h3>Technologies</h3>
+                    <div class="project-tech">
+                        {% for tech in page.technologies %}
+                        <span class="tech-tag">{{ tech }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                
+                {% if page.supported_platforms %}
+                <div class="info-item">
+                    <h3>Supported Platforms</h3>
+                    <div class="platform-badges">
+                        {% for platform in page.supported_platforms %}
+                        <span class="platform-badge">{{ platform }}</span>
+                        {% endfor %}
+                    </div>
+                </div>
+                {% endif %}
+                
+                {% if page.github %}
+                <div class="info-item">
+                    <h3>Source Code</h3>
+                    <a href="{{ page.github }}" class="btn btn-secondary" target="_blank">
+                        <i class="fab fa-github"></i> View on GitHub
+                    </a>
+                </div>
+                {% endif %}
+                
+                {% if page.documentation %}
+                <div class="info-item">
+                    <h3>Documentation</h3>
+                    <a href="{{ page.documentation }}" class="btn btn-primary" target="_blank">
+                        <i class="fas fa-book"></i> Read Docs
+                    </a>
+                </div>
+                {% endif %}
+            </div>
+        </div>
+        
+        <!-- API Overview Section -->
+        {% if page.api_functions %}
+        <div class="api-overview">
+            <h2>Core API Functions</h2>
+            <div class="api-grid">
+                {% for function in page.api_functions %}
+                <div class="api-function">
+                    <h4><code>{{ function.name }}</code></h4>
+                    <p>{{ function.description }}</p>
+                    {% if function.parameters %}
+                    <div class="function-params">
+                        <strong>Parameters:</strong>
+                        <ul>
+                            {% for param in function.parameters %}
+                            <li><code>{{ param.name }}</code> ({{ param.type }}) - {{ param.description }}</li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Code Examples Section -->
+        {% if page.code_examples %}
+        <div class="code-examples">
+            <h2>Usage Examples</h2>
+            {% for example in page.code_examples %}
+            <div class="code-example">
+                <h4>{{ example.title }}</h4>
+                <p>{{ example.description }}</p>
+                <pre><code class="language-{{ example.language }}">{{ example.code }}</code></pre>
+            </div>
+            {% endfor %}
+        </div>
+        {% endif %}
+        
+        <!-- Library Features -->
+        {% if page.library_features %}
+        <div class="library-features">
+            <h2>Library Features</h2>
+            <div class="features-checklist">
+                {% for feature in page.library_features %}
+                <div class="feature-check-item">
+                    <i class="fas fa-check-circle"></i>
+                    <span>{{ feature }}</span>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Performance Benchmarks -->
+        {% if page.benchmarks %}
+        <div class="performance-benchmarks">
+            <h2>Performance Benchmarks</h2>
+            <div class="benchmark-table">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Operation</th>
+                            <th>Time (ms)</th>
+                            <th>Memory (MB)</th>
+                            <th>Comparison</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {% for benchmark in page.benchmarks %}
+                        <tr>
+                            <td>{{ benchmark.operation }}</td>
+                            <td>{{ benchmark.time }}</td>
+                            <td>{{ benchmark.memory }}</td>
+                            <td>{{ benchmark.comparison }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        {% endif %}
+        
+        <!-- Installation Instructions -->
+        {% if page.installation %}
+        <div class="installation-section">
+            <h2>Installation</h2>
+            <div class="installation-steps">
+                {% for step in page.installation %}
+                <div class="install-step">
+                    <h4>{{ step.title }}</h4>
+                    {% if step.code %}
+                    <pre><code class="language-bash">{{ step.code }}</code></pre>
+                    {% endif %}
+                    {% if step.description %}
+                    <p>{{ step.description }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endif %}
+        
+        <div class="project-content">
+            {{ content }}
+        </div>
+    </div>
+</article>
