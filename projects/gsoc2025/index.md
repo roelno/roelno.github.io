@@ -3,7 +3,7 @@ layout: project-gsoc
 title: "Google Summer of Code 2025 with VideoLAN"
 permalink: /projects/gsoc2025/
 date: 2025-03-01
-image: "/assets/images/projects/gsoc2025/vlc.png"
+image: "/assets/images/projects/gsoc2025/vlc_gsoc.jpg"
 
 # Mentors
 mentors: "**Mentors**: Felix Paul Kühne, Diogo Simao Marques"
