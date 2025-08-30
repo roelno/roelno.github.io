@@ -17,23 +17,52 @@ layout: default
         <p>{{ page.achievements }}</p>
 
         <h2>Achievements Table</h2>
-        <table class="achievements-table">
+            <style>
+            .achievements-table {
+                border-collapse: collapse;
+                width: 100%;
+            }
+            .achievements-table th, .achievements-table td {
+                border: 1px solid #333;
+                padding: 8px;
+                text-align: left;
+            }
+            .achievements-table thead th {
+                background-color: #f2f2f2;
+            }
+                .achievements-table td a {
+                    color: #1976d2;
+                    text-decoration: underline;
+                    font-weight: bold;
+                    transition: color 0.2s;
+                }
+                .achievements-table td a:hover {
+                    color: #d32f2f;
+                }
+            </style>
+            <table class="achievements-table">
             <thead>
                 <tr>
-                    <th>Column 1</th>
-                    <th>Column 2</th>
-                    <th>Column 3</th>
-                    <th>Column 4</th>
+                    <th>Feature</th>
+                    <th>Repository</th>
+                    <th>Gitlab Link</th>
+                    <th>Status</th>
                 </tr>
             </thead>
             <tbody>
                 {% for row in page.achievements_table %}
-                <tr>
-                    <td>{{ row.col1 }}</td>
-                    <td>{{ row.col2 }}</td>
-                    <td>{{ row.col3 }}</td>
-                    <td>{{ row.col4 }}</td>
-                </tr>
+                    <tr>
+                        <td>{{ row.col1 }}</td>
+                        <td>{{ row.col2 }}</td>
+                        <td>
+                            {% if row.col3.url %}
+                                <a href="{{ row.col3.url }}" target="_blank">{{ row.col3.text }}</a>
+                            {% else %}
+                                {{ row.col3 }}
+                            {% endif %}
+                        </td>
+                        <td>{{ row.col4 }}</td>
+                    </tr>
                 {% endfor %}
             </tbody>
         </table>
