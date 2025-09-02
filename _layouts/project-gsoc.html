@@ -35,7 +35,7 @@ layout: default
                 .achievements-table td a {
                     color: #1976d2;
                     text-decoration: underline;
-                    font-weight: bold;
+                    font-weight: normal;
                     transition: color 0.2s;
                 }
                 .achievements-table td a:hover {
@@ -47,7 +47,7 @@ layout: default
                 <tr>
                     <th>Feature</th>
                     <th>Repository</th>
-                    <th>Gitlab Link</th>
+                    <th>MR Link</th>
                     <th>Status</th>
                 </tr>
             </thead>
@@ -59,6 +59,11 @@ layout: default
                         <td>
                             {% if row.col3.url %}
                                 <a href="{{ row.col3.url }}" target="_blank">{{ row.col3.text }}</a>
+                            {% elsif row.col3[0] %}
+                                {% for link in row.col3 %}
+                                    <a href="{{ link.url }}" target="_blank">{{ link.text }}</a>
+                                    {% unless forloop.last %}<br>{% endunless %}
+                                {% endfor %}
                             {% else %}
                                 {{ row.col3 }}
                             {% endif %}

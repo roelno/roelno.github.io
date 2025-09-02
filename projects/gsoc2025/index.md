@@ -19,13 +19,13 @@ achievements_table:
   - col1: "Allow Dynamic Length Seek on Swipe"
     col2: "vlc-iOS"
     col3:
-      text: "MR !1512"
+      text: "vlc-ios!1512"
       url: "https://code.videolan.org/videolan/vlc-ios/-/merge_requests/1512"
     col4: "✅ Merged"
   - col1: "Custom Default Playback Speed"
     col2: "vlc-iOS"
     col3:
-      text: "MR !1500"
+      text: "vlc-ios!1500"
       url: "https://code.videolan.org/videolan/vlc-ios/-/merge_requests/1500"
     col4: "✅ Merged"
   - col1: "Chinese Subtitles Rendering Fix (iOS 18.0+)"
@@ -37,21 +37,19 @@ achievements_table:
   - col1: "Save Playback Speed to Metadata on Exit"
     col2: "vlc-iOS"
     col3:
-      text: "MR !1526"
+      text: "vlc-ios!1526"
       url: "https://code.videolan.org/videolan/vlc-ios/-/merge_requests/1526"
     col4: "✅ Merged"
   - col1: "Support Dual Subtitles for Language Learners on iOS"
-    col2: "VLCKit"
+    col2: "VLCKit<br>VLCMediaLibraryKit<br>vlc-iOS"
     col3:
-      text: "MR!371"
-      url: "https://code.videolan.org/videolan/VLCKit/-/merge_requests/371"
+      - text: "VLCKit!371"
+        url: "https://code.videolan.org/videolan/VLCKit/-/merge_requests/371"
+      - text: "VLCMediaLibraryKit!62"
+        url: "https://code.videolan.org/videolan/VLCMediaLibraryKit/-/merge_requests/62"
+      - text: "vlc-ios!1525"
+        url: "https://code.videolan.org/videolan/vlc-ios/-/merge_requests/1525"
     col4: "✅ Merged"
-  - col1: "Dual Subtitles API for iOS"
-    col2: "vlc-iOS"
-    col3:
-      text: "MR !1525"
-      url: "https://code.videolan.org/videolan/vlc-ios/-/merge_requests/1525"
-    col4: "⏳ Pending merge"
 
 # Technical stack section
 languages: "Objective-C, Swift"
