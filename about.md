@@ -6,6 +6,9 @@ permalink: /about/
 
 # About Me
 
+
+<img src="/assets/images/avatar.jpg" alt="Yue (Zelda) Zhang" style="width: 200px; height: 200px; border-radius: 50%; object-fit: cover; display: block; margin: 20px 0;">
+
 ## Background
 
 Hello, I'm Yue (Zelda). I am a software developer specializing in iOS, with a Master's degree in Computer Science from Northeastern University.
